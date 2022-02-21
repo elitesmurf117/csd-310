@@ -1,0 +1,29 @@
+import mysql_test  #This should attach previous assignment into this assignment 
+
+import mysql.connector
+from mysql.connector import errorcode
+
+db = mysql.connector.connect(
+    host = localhost,
+    user = pysports_user,
+    password = "MySQL8IsGreat!", 
+    database= pysports
+)
+
+
+cursor = db.cursor()
+
+query = "SELECT team_id, team_name, mascot FROM team"
+
+
+cursor.execute(query)
+
+
+for team in cursor:
+    print(team)
+
+
+cursor.close()
+
+
+db.close()
